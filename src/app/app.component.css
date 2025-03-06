@@ -1,0 +1,9 @@
+main {
+  background: url("/assets/imagens/main/background.png");
+  background-size: cover;
+  min-height: 60vh;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

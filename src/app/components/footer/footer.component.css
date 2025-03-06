@@ -1,0 +1,33 @@
+footer{
+  background: #154580;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "texto-copyright logo-footer .";
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.texto-copyright {
+  justify-self: center;
+  grid-area: texto-copyright;
+}
+
+.logo-footer{
+  justify-self: center;
+  grid-area: logo-footer;
+}
+
+footer small {
+  color: white;
+}
+
+@media (max-width: 768px) {
+  footer {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 1rem;
+  }
+}
