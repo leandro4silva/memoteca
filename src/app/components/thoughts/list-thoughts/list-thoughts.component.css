@@ -36,13 +36,20 @@ section{
     font-size: 20px;
     font-weight: 500;
   }
-
 }
 
-.mural{
+.mural {
   margin-top: 48px;
   margin-bottom: 86px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  column-gap: 24px;
+  gap: 24px;
+
+  .thought-g {
+    grid-column: span 2;
+  }
+
+  .thought-p {
+    grid-column: span 1;
+  }
 }

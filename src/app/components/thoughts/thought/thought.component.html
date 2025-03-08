@@ -1,9 +1,11 @@
-<div class="content {{ thought.model }}">
-  <img ngSrc="assets/imagens/thoughts/{{thought.model}}.png" width="65" height="51" alt="Aspas coloridas">
-  <p>
-    {{ thought.content }}
-  </p>
-  <span>{{ thought.author }}</span>
+<div class="card {{ thought.model }}">
+  <div class="content">
+    <img ngSrc="assets/imagens/thoughts/{{thought.model}}.png" width="65" height="51" alt="Aspas coloridas">
+    <p>
+      {{ thought.content }}
+    </p>
+    <span>{{ thought.author }}</span>
+  </div>
   <div class="actions">
     <button>
       <svg width="28" height="28" viewBox="0 0 28 28"  fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
