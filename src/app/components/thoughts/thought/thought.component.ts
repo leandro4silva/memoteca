@@ -17,5 +17,4 @@ export class ThoughtComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

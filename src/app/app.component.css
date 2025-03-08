@@ -10,3 +10,21 @@ main {
   width: 100%;
 }
 
+
+.mural {
+  margin-top: 48px;
+  margin-bottom: 86px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colunas com largura igual */
+  gap: 24px; /* Espaçamento entre os itens */
+}
+
+.thought-g {
+  grid-column: span 2; /* Ocupa 2 colunas */
+  background-color: #f4a261; /* Cor de fundo para destacar */
+}
+
+.thought-p {
+  grid-column: span 1; /* Ocupa 1 coluna (padrão, não precisa ser explícito) */
+  background-color: #ccc; /* Cor de fundo para destacar */
+}

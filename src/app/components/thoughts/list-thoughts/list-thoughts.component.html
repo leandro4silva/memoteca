@@ -4,7 +4,7 @@
     <button class="add-thoughts" routerLink="/create-thoughts">Adicionar pensamento</button>
   </header>
   <div class="mural" *ngIf="listThoughts.length > 0, else withoutThoughts">
-    <div *ngFor="let thought of listThoughts">
+    <div *ngFor="let thought of listThoughts" [ngClass]="widthThought(thought)">
       <app-thought
         [thought]="thought"
       ></app-thought>
