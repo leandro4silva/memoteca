@@ -8,6 +8,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import {FormsModule} from "@angular/forms";
 import { ListThoughtsComponent } from './components/thoughts/list-thoughts/list-thoughts.component';
 import { CreateThoughtsComponent } from "./components/thoughts/create-thoughts/create-thoughts.component";
+import { ThoughtComponent } from './components/thoughts/thought/thought.component';
+import {NgOptimizedImage} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -16,12 +18,14 @@ import { CreateThoughtsComponent } from "./components/thoughts/create-thoughts/c
     FooterComponent,
     CreateThoughtsComponent,
     ListThoughtsComponent,
+    ThoughtComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        NgOptimizedImage
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
