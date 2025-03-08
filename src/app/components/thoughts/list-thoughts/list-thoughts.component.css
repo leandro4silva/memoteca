@@ -1,0 +1,48 @@
+section{
+  width: 70vw;
+}
+
+.header{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  margin-top: 48px;
+
+  button{
+    background: #154580;
+    color: white;
+    padding: 28px 68px;
+    font-family: Inter, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    width: 35%;
+  }
+}
+
+.without-thoughts{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  margin-top: 48px;
+  margin-bottom: 48px;
+
+  p{
+    font-family: Inter, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+}
+
+.mural{
+  margin-top: 48px;
+  margin-bottom: 86px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 24px;
+}

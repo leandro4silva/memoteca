@@ -5,21 +5,27 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { CreateThoughtComponent } from './components/thoughts/create-thought/create-thought.component';
 import {FormsModule} from "@angular/forms";
+import { ListThoughtsComponent } from './components/thoughts/list-thoughts/list-thoughts.component';
+import { CreateThoughtsComponent } from "./components/thoughts/create-thoughts/create-thoughts.component";
+import { ThoughtComponent } from './components/thoughts/thought/thought.component';
+import {NgOptimizedImage} from "@angular/common";
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    CreateThoughtComponent
+    CreateThoughtsComponent,
+    ListThoughtsComponent,
+    ThoughtComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        NgOptimizedImage
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
