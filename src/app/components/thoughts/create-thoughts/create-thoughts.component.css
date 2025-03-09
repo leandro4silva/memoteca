@@ -1,77 +1,117 @@
-section{
+/* Estilos gerais */
+section {
   margin-bottom: 80px;
   width: 100%;
 }
 
-form{
+/* Estilos do formulário */
+form {
   background-color: #C4EDFF;
   padding: 59px 100px;
   border-radius: 20px;
   width: 65vw;
 }
 
-form > :nth-child(2){
+form > :nth-child(2) {
   margin-top: 32px;
 }
 
-form > :nth-child(3){
+form > :nth-child(3) {
   margin-top: 46px;
 }
 
-form > :nth-child(4){
+form > :nth-child(4) {
   margin-top: 16px;
 }
 
-form > :nth-child(5){
+form > :nth-child(5) {
   margin-top: 72px;
 }
 
-label > span{
+/* Estilos para labels */
+label {
+  display: flex;
+  font-size: 22px;
+  font-weight: bold;
+  color: #154580;
+}
+
+label > span {
   font-weight: normal;
   font-size: 18px;
   color: #444444;
   margin-left: 16px;
 }
 
-label{
-  display: flex;
-
-  input[Type="radio"]{
-    border-color: #444444;
-    width: 36px;
-    height: 36px;
-  }
+label > input[type="radio"] {
+  border-color: #444444;
+  width: 36px;
+  height: 36px;
 }
 
-.radio-content{
+/* Estilos para inputs e textareas */
+.input,
+.input-textarea {
+  border: none;
+  padding: 21px 27px;
+  border-radius: 10px;
+  font-weight: normal;
+  font-size: 16px;
+}
+
+.input-textarea {
+  height: 118px;
+}
+
+.input::placeholder,
+.input-textarea::placeholder {
+  color: #C4C4C4;
+  font-weight: normal;
+  font-size: 16px;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+}
+
+/* Estilos para grupos de formulário */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Estilos para rádios personalizados */
+.radio-content {
   display: flex;
   align-items: center;
 }
 
-.custom-radio{
+.custom-radio {
   display: none;
 }
 
-.container-radio{
+.container-radio {
   margin-top: 8px;
 }
 
-.radio-model{
+.radio-model {
   display: flex;
   align-items: center;
-
-  > div{
-    flex: 1;
-
-  }
 }
 
-.prev-content{
+.radio-model > div {
+  flex: 1;
+}
+
+/* Estilos para conteúdo de pré-visualização */
+.prev-content {
   flex: 1;
   min-width: 100px;
 }
 
-.prev-content .content{
+.prev-content .content {
   margin-top: 15px;
   background-color: #F8F9FE;
   padding: 17px 27px;
@@ -79,159 +119,106 @@ label{
   flex-direction: column;
   gap: 14px;
   box-shadow: 8px 8px 0 #154580;
-
-  p{
-    font-family: Inconsolata, monospace;
-    font-size: 18px;
-    width: 100%;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-  }
-
-  span{
-    font-family: Inter, sans-serif;
-    font-size: 18px;
-    font-weight: 500;
-  }
 }
 
-label{
-  font-size: 22px;
-  font-weight: bold;
-  color: #154580;
+.prev-content > p,
+.prev-content > span {
+  font-size: 18px;
+  width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
-.input-textarea{
-  border: none;
-  height: 118px;
-  padding: 21px 27px;
-  border-radius: 10px;
-  font-weight: normal;
-  font-size: 16px;
+.prev-content > p {
+  font-family: Inconsolata, monospace;
 }
 
-.input-textarea::placeholder{
-  color: #C4C4C4;
-  font-weight: normal;
-  font-size: 16px;
+.prev-content > span {
+  font-family: Inter, sans-serif;
+  font-weight: 500;
 }
 
-input,
-textarea:focus {
-  outline: none;
-}
-
-.input{
-  border: none;
-  padding: 21px 31px;
-  border-radius: 10px;
-  font-weight: normal;
-  font-size: 16px;
-}
-
-.input::placeholder{
-  color: #C4C4C4;
-  font-weight: normal;
-  font-size: 16px;
-}
-
-.form-group{
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.buttons-actions{
+/* Estilos para botões */
+.buttons-actions {
   display: flex;
   justify-content: center;
   gap: 5px;
-
-  button{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #FFFFFF;
-    background-color: #154580;
-    padding: 14px 69px;
-    width: 20%;
-    border-radius: 10px;
-    font-family: Inter, sans-serif;
-    font-size: 20px;
-    font-weight: bold;
-    cursor: pointer;
-  }
 }
 
-.model-content{
+.buttons-actions > button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  background-color: #154580;
+  padding: 14px 69px;
+  width: 20%;
+  border-radius: 10px;
+  font-family: Inter, sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Estilos para o modelo de conteúdo */
+.model-content {
   display: flex;
   width: 100%;
   gap: 20px;
 }
 
+/* Responsividade */
+@media (max-width: 768px) {
+  section {
+    width: 100%;
+  }
+
+  form {
+    width: 80vw;
+    padding: 2rem 2rem;
+  }
+
+  form > :nth-child(2) {
+    margin-top: 32px;
+  }
+
+  form > :nth-child(3) {
+    margin-top: 26px;
+  }
+
+  form > :nth-child(4) {
+    margin-top: 10px;
+  }
+
+  form > :nth-child(5) {
+    margin-top: 16px;
+  }
+
+  .radio-model {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .model-content {
+    flex-direction: column;
+  }
+
+  .buttons-actions {
+    flex-direction: column;
+  }
+
+  .buttons-actions > button {
+    width: 100%;
+  }
+}
 
 @media (max-width: 576px) {
   form {
     padding: 2rem 2rem;
   }
 
-  h2{
+  h2 {
     font-size: 1.5rem;
   }
 }
-
-@media (max-width: 768px) {
-  section{
-    width: 100%;
-  }
-
-  h2{
-    font-size: 2rem;
-  }
-
-  form{
-    width: 80vw;
-  }
-
-  form > :nth-child(2){
-    margin-top: 32px;
-  }
-
-  form > :nth-child(3){
-    margin-top: 26px;
-  }
-
-  form > :nth-child(4){
-    margin-top: 10px;
-  }
-
-  form > :nth-child(5){
-    margin-top: 16px;
-  }
-
-  form {
-    padding: 2rem 2rem;
-  }
-
-  .radio-model{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .model-content{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 20px;
-  }
-
-  .buttons-actions{
-    display: flex;
-    flex-direction: column;
-
-    button{
-      width: 100%;
-    }
-  }
-}
-

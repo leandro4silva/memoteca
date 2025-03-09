@@ -1,4 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Thought} from "../abstractions/thoughts";
+import {EventThought} from "../abstractions/eventThoughtEmitter";
 
 @Component({
   selector: 'app-thought',
@@ -7,14 +9,21 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class ThoughtComponent implements OnInit {
 
-  @Input() thought = {
+  @Input() thought: Thought = {
     content: "",
     author: "",
     model: ""
   }
 
+  @Output() thoughtClicked = new EventEmitter<EventThought>();
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  deleteThought(){
+      this.thoughtClicked.emit({
+        thought: this.thought, event: "delete"});
   }
 }

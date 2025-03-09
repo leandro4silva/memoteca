@@ -1,11 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
-interface Thought{
-  id: string
-  content: string
-  author: string
-  model: string
-}
+import {Thought} from "../abstractions/thoughts";
+import {ThoughtsService} from "../services/thoughts.service";
+import {EventThought} from "../abstractions/eventThoughtEmitter";
 
 @Component({
   selector: 'app-list-thoughts',
@@ -13,59 +9,30 @@ interface Thought{
   styleUrls: ['./list-thoughts.component.css']
 })
 export class ListThoughtsComponent implements OnInit {
+  listThoughts : Thought[] = [];
 
-  listThoughts : Array<Thought> = [
-    {
-      id: '1',
-      content: '@lorem ipsum @lorem ipsum@lorem ipsum @lorem ipsum @lorem ipsum  @lorem ipsum @lorem ipsum @lorem ipsum @lorem ipsum @lorem ipsum ' +
-        '@lorem ipsum @lorem ipsum@lorem ipsum @lorem ipsum @lorem ipsum  @lorem ipsum @lorem ipsum @lorem ipsum @lorem ipsum @lorem ipsum ' +
-      '@lorem ipsum @lorem ipsum@lorem ipsum @lorem ipsum @lorem ipsum  @lorem ipsum @lorem ipsum @lorem ipsum @lorem ipsum @lorem ipsum ',
-      author: 'Dev',
-      model: 'model1'
-    },
-    {
-      id: '2',
-      content: 'Teste 2',
-      author: 'Dev',
-      model: 'model2'
-    },
-    {
-      id: '3',
-      content: 'Teste 3',
-      author: 'Dev',
-      model: 'model3'
-    },
-    {
-      id: '2',
-      content: 'Teste 2',
-      author: 'Dev',
-      model: 'model2'
-    },
-    {
-      id: '3',
-      content: 'Teste 3',
-      author: 'Dev',
-      model: 'model3'
-    },
-    {
-      id: '3',
-      content: 'Teste 3',
-      author: 'Dev',
-      model: 'model3'
-    },
-    {
-      id: '1',
-      content: '@lorem ipsum @lorem ipsum@lorem ipsum @lorem ipsum @lorem ipsum  @lorem ipsum @lorem ipsum @lorem ipsum @lorem ipsum @lorem ipsum ' +
-        '@lorem ipsum @lorem ipsum@lorem ipsum @lorem ipsum @lorem ipsum  @lorem ipsum @lorem ipsum @lorem ipsum @lorem ipsum @lorem ipsum ' +
-        '@lorem ipsum @lorem ipsum@lorem ipsum @lorem ipsum @lorem ipsum  @lorem ipsum @lorem ipsum @lorem ipsum @lorem ipsum @lorem ipsum ',
-      author: 'Dev',
-      model: 'model1'
-    },
-  ];
+  eventThought: EventThought = {
+    thought:{
+      author: "",
+      content: "",
+      model: ""
+    }
+  };
 
-  constructor() { }
+  constructor(private service: ThoughtsService) { }
 
   ngOnInit(): void {
+    this.service.list().subscribe((listThoughts) => {
+      this.listThoughts = listThoughts;
+    });
+  }
+
+  onThoughtClicked(event: EventThought) {
+    this.eventThought = event;
+
+    if(this.eventThought.event === "deleted"){
+      this.listThoughts = this.listThoughts.filter(thought => thought.id !== event.thought.id);
+    }
   }
 
   widthThought(thought: Thought): string{

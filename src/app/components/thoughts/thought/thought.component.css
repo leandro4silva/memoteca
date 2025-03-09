@@ -1,52 +1,56 @@
-.card{
+/* Estilos base do card */
+.card {
   background-color: #F8F9FE;
   display: flex;
   flex-direction: column;
 }
 
-.content{
+/* Estilos para o conteúdo do card */
+.content {
   display: flex;
   flex-direction: column;
   gap: 24px;
   padding: 32px 32px 17px 32px;
-
-  p{
-    font-family: Roboto Mono, monospace;
-    font-size: 16px;
-    width: 100%;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-  }
-
-  span{
-    font-family: Roboto Mono, sans-serif;
-    font-size: 18px;
-    font-weight: 500;
-  }
 }
 
-.actions{
+.content p {
+  font-family: Roboto Mono, monospace;
+  font-size: 16px;
+  width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.content span {
+  font-family: Roboto Mono, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* Estilos para as ações do card */
+.actions {
   display: flex;
   justify-content: flex-end;
   gap: 10px;
   padding-right: 16px;
   padding-bottom: 16px;
-
-  button{
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
 }
 
-.model1{
+.actions button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Estilos para os modelos de card */
+.model1 {
   box-shadow: 8px 8px 0 #154580;
 }
 
-.model2{
-  box-shadow: 8px 8px 0 #84EEC1;
+.model2 {
+  box-shadow: 8px 8px 0 #6BD1FF;
 }
 
-.model3{
-  box-shadow: 8px 8px 0 #6BD1FF;
+.model3 {
+  box-shadow: 8px 8px 0 #84EEC1;
 }

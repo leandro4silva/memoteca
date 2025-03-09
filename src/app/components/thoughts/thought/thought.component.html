@@ -7,7 +7,7 @@
     <span>{{ thought.author }}</span>
   </div>
   <div class="actions">
-    <button>
+    <button id="edit" routerLink="/update-thoughts/{{ thought.id }}">
       <svg width="28" height="28" viewBox="0 0 28 28"  fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <rect width="28" height="28" fill="url(#pattern0_30752_56)"/>
         <defs>
@@ -18,7 +18,7 @@
         </defs>
       </svg>
     </button>
-    <button>
+    <button id="delete" (click)="deleteThought()">
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <rect width="28" height="28" fill="url(#pattern0_216_57)"/>
         <defs>

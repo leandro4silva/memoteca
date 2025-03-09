@@ -1,0 +1,26 @@
+version: 1
+
+frontend:
+  environment:
+    variables:
+      NODE_VERSION: '22'
+  phases:
+    preBuild:
+      commands:
+        - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+        - source ~/.bashrc
+        - nvm install 22
+        - nvm use 22
+        - npm install
+        - npm install -g @angular/cli@14
+    build:
+      commands:
+        - npm run build --configuration=production
+  artifacts:
+    baseDirectory: dist/memoteca
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - .npm/**/*
+      - node_modules/**/*

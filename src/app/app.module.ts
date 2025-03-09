@@ -10,6 +10,9 @@ import { ListThoughtsComponent } from './components/thoughts/list-thoughts/list-
 import { CreateThoughtsComponent } from "./components/thoughts/create-thoughts/create-thoughts.component";
 import { ThoughtComponent } from './components/thoughts/thought/thought.component';
 import {NgOptimizedImage} from "@angular/common";
+import {HttpClientModule} from "@angular/common/http";
+import { DeleteThoughtsComponent } from './components/thoughts/delete-thoughts/delete-thoughts.component';
+import {EditThoughtsComponent} from "./components/thoughts/edit-thoughts/edit-thoughts.component";
 
 @NgModule({
   declarations: [
@@ -19,12 +22,15 @@ import {NgOptimizedImage} from "@angular/common";
     CreateThoughtsComponent,
     ListThoughtsComponent,
     ThoughtComponent,
+    DeleteThoughtsComponent,
+    EditThoughtsComponent,
   ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         FormsModule,
-        NgOptimizedImage
+        NgOptimizedImage,
+        HttpClientModule,
     ],
   providers: [],
   bootstrap: [AppComponent]

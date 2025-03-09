@@ -1,55 +1,121 @@
-section{
+/* Estilos gerais */
+section {
   width: 70vw;
 }
 
-.header{
+/* Estilos do cabeçalho */
+.header {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 32px;
   margin-top: 48px;
-
-  button{
-    background: #154580;
-    color: white;
-    padding: 28px 68px;
-    font-family: Inter, sans-serif;
-    font-size: 20px;
-    font-weight: bold;
-    border-radius: 10px;
-    cursor: pointer;
-    border: none;
-    width: 35%;
-  }
 }
 
-.without-thoughts{
+.header button {
+  background: #154580;
+  color: white;
+  padding: 28px 68px;
+  font-family: Inter, sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  width: 35%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: filter 0.3s ease; /* Transição suave para o hover */
+}
+
+.header button:hover {
+  filter: brightness(1.1); /* Efeito de brilho ao passar o mouse */
+}
+
+/* Estilos para a seção sem pensamentos */
+.without-thoughts {
   display: flex;
   align-content: center;
   justify-content: center;
   margin-top: 48px;
   margin-bottom: 48px;
-
-  p{
-    font-family: Inter, sans-serif;
-    font-size: 20px;
-    font-weight: 500;
-  }
 }
 
+.without-thoughts p {
+  font-family: Inter, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+/* Estilos para o mural de pensamentos */
 .mural {
   margin-top: 48px;
   margin-bottom: 86px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
+}
 
-  .thought-g {
+.mural .thought-g {
+  grid-column: span 2;
+}
+
+.mural .thought-p {
+  grid-column: span 1;
+}
+
+/* Responsividade */
+@media (max-width: 676px) {
+  section {
+    width: 90vw;
+  }
+
+  .header button {
+    width: 75%;
+  }
+
+  .mural {
+    margin-top: 28px;
+    margin-bottom: 46px;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 676px) and (max-width: 968px) {
+  section {
+    width: 80vw;
+  }
+
+  .header button {
+    width: 66%;
+  }
+
+  .mural {
+    margin-top: 28px;
+    margin-bottom: 46px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .mural .thought-g {
     grid-column: span 2;
   }
 
-  .thought-p {
+  .mural .thought-p {
     grid-column: span 1;
+  }
+}
+
+@media (min-width: 968px) and (max-width: 1368px) {
+  section {
+    width: 80vw;
+  }
+
+  .header button {
+    width: 47%;
   }
 }

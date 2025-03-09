@@ -7,10 +7,19 @@
     <div *ngFor="let thought of listThoughts" [ngClass]="widthThought(thought)">
       <app-thought
         [thought]="thought"
+        (thoughtClicked)="onThoughtClicked($event)"
       ></app-thought>
     </div>
   </div>
 </section>
+
+<ng-container *ngIf="eventThought.event === 'delete'">
+  <app-delete-thoughts
+    [thought]="eventThought.thought"
+    (thoughtClicked)="onThoughtClicked($event)"
+  ></app-delete-thoughts>
+</ng-container>
+
 <ng-template #withoutThoughts>
   <div class="without-thoughts ff-inter">
     <p>Ainda não há pensamentos cadastrados!</p>
