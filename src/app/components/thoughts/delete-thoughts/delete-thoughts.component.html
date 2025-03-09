@@ -1,0 +1,17 @@
+<section>
+  <div class="modal">
+    <div class="modal-content">
+      <button class="close" (click)="cancelThought()">&times;</button>
+      <div>
+        <p>
+          O pensamento será deletado <br>
+          Confirma a exclusão?
+        </p>
+        <div class="actions">
+          <button (click)="deleteThought()">Excluir</button>
+          <button (click)="cancelThought()">Cancelar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
