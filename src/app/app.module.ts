@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { ListThoughtsComponent } from './components/thoughts/list-thoughts/list-thoughts.component';
 import { CreateThoughtsComponent } from "./components/thoughts/create-thoughts/create-thoughts.component";
 import { ThoughtComponent } from './components/thoughts/thought/thought.component';
@@ -31,6 +31,7 @@ import {EditThoughtsComponent} from "./components/thoughts/edit-thoughts/edit-th
         FormsModule,
         NgOptimizedImage,
         HttpClientModule,
+        ReactiveFormsModule
     ],
   providers: [],
   bootstrap: [AppComponent]

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Thought} from "../abstractions/thoughts";
 import {ThoughtsService} from "../services/thoughts.service";
 import {Router} from "@angular/router";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-create-thoughts',
@@ -9,22 +10,21 @@ import {Router} from "@angular/router";
   styleUrls: ['./create-thoughts.component.css']
 })
 export class CreateThoughtsComponent implements OnInit {
-
-  thought: Thought = {
-    content: '',
-    author: '',
-    model: 'model1'
-  };
+  form!: FormGroup;
 
   constructor(
     private service: ThoughtsService,
     private router: Router,
+    private formBuilder: FormBuilder
   ) { }
 
-  create(thought: Thought) {
-    this.service.create(this.thought).subscribe(() => {
-      this.router.navigate(['/list-thoughts']);
-    })
+  create() {
+    console.log(this.form);
+    if(this.form.valid) {
+      this.service.create(this.form.value).subscribe(() => {
+        this.router.navigate(['/list-thoughts']);
+      })
+    }
   }
 
   cancel(){
@@ -32,5 +32,21 @@ export class CreateThoughtsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.form = this.formBuilder.group({
+      content: ['',
+        Validators.compose([
+          Validators.required,
+          Validators.pattern(/^\S*$/),
+          Validators.maxLength(350)
+        ])
+      ],
+      author: ['',
+        Validators.compose([
+          Validators.required,
+          Validators.minLength(3)
+        ])
+      ],
+      model: ['model1', [Validators.required]],
+    })
   }
 }
