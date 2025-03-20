@@ -19,7 +19,6 @@ export class CreateThoughtsComponent implements OnInit {
   ) { }
 
   create() {
-    console.log(this.form);
     if(this.form.valid) {
       this.service.create(this.form.value).subscribe(() => {
         this.router.navigate(['/list-thoughts']);
@@ -29,6 +28,14 @@ export class CreateThoughtsComponent implements OnInit {
 
   cancel(){
     this.router.navigate(['/list-thoughts']);
+  }
+
+  enableButton(): string{
+    if(this.form.valid){
+      return 'button'
+    }else{
+      return 'button_disable'
+    }
   }
 
   ngOnInit(): void {

@@ -13,6 +13,9 @@
         placeholder="Digite o pensamento"
         maxlength="250">
       </textarea>
+      <div class="message_erro" *ngIf="form.get('content')?.errors && form.get('content')?.touched">
+        Conteudo é obrigatorio
+      </div>
     </div>
     <div class="form-group">
       <label for="autor" class="ff-inter">Autor(a) ou Fonte</label>
@@ -22,6 +25,12 @@
         id="autor"
         formControlName="author"
         placeholder="Insira o nome do(a) autor(a) ou fonte.">
+      <div class="message_erro" *ngIf="form.get('author')?.errors?.['required'] && form.get('author')?.touched">
+        Autor é obrigatorio
+      </div>
+      <div class="message_erro" *ngIf="form.get('author')?.errors?.['minlength'] && form.get('author')?.touched">
+        Autor precisa ter no minimo 3 caracters
+      </div>
     </div>
     <div class="form-group">
       <label>Selecione o modelo do card:</label>
@@ -88,8 +97,14 @@
     </div>
     <div class="form-group">
       <div class="buttons-actions">
-        <button (click)="create()">Salvar</button>
-        <button (click)="cancel()">Cancelar</button>
+        <button
+          [disabled]="!form.valid"
+          (click)="create()"
+          [ngClass]="enableButton()"
+          >
+            Salvar
+        </button>
+        <button (click)="cancel()" class="button">Cancelar</button>
       </div>
     </div>
   </form>
