@@ -158,6 +158,8 @@ textarea:focus {
   font-size: 20px;
   font-weight: bold;
   cursor: pointer;
+  border: none;
+  transition: background-color 0.2s;
 }
 
 /* Estilos para o modelo de conteúdo */
@@ -166,6 +168,27 @@ textarea:focus {
   width: 100%;
   gap: 20px;
 }
+
+.message_erro{
+  font-size: 12px;
+  margin-left: 5px;
+  color: red;
+  margin-top: -5px;
+}
+
+.buttons-actions > button.button:hover {
+  filter: brightness(1.1);
+}
+
+.buttons-actions > button.button{
+  background-color: #154580;
+}
+
+.buttons-actions > button.button_disable {
+  background-color: #6a6a6a;
+  color: #FFFFFF;
+}
+
 
 /* Responsividade */
 @media (max-width: 768px) {
